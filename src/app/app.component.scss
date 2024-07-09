@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(244, 241, 241);
+}
+
+.panel { 
+  width: 100%;
+  padding: 12px;
+}
+
+
+.panel h2 {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+.topic {
+    color: chocolate;
+}
+
+.list li::marker {
+  color: red;
+}
+
+.list li {
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 500;
+}
