@@ -14,4 +14,69 @@
     </ol>
 
 
+    <!--  property binding + event binding -->
+    <h2>დავალება 2. <span class="topic">"property binding"</span></h2>
+    <ol class="list">
+      <li>
+        თქვენი მიზანია მოცემულ სვიჩერზე კლიკის დროს აჩვენოთ შესაბამისი სურათი
+        თუ სვიჩერი დააბრუნებს true ს აჩვენოს მამაკაცის თუ false ს აჩვენოს ქალის
+      </li>
+      <li>
+        სვიჩერის ქვემოთ არის h3 ელემენტი სადაც წერია პიროვნების სახელი, აქაც
+        თუ ქალია მაშინ მაუსის მიტანის დროს title ატრიბუტში დაიწეროს "ქალბატონი"
+        და თუ კაცია "ბატონი"
+      </li>
+    </ol>
+    <div class="card">
+      <div class="card_header">
+        <div class="switcher">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="card_body">
+        <div class="card_body_title">
+          <h3 title="პიროვნება">სახელი</h3>
+        </div>
+        <div class="card_body_image">
+          <img src="../assets/person.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- templateref binding-->
+    <h2>დავალება 3. <span class="topic">"templateRef binding"</span></h2>
+    <ol class="list">
+      <li>
+        დავლებაში მოცემულია Todo ლისტი , რომელიც მოიცავს ძებნის input  ს , დამატება ღილაკს
+        და result ის ადგილს სადაც უნდა დაემატოს ჩანაწერები
+      </li>
+      <li>
+        თქვენი მიზანია searchbar ის input ს გაუკეთოთ templateref რომელიც ამოიღებს
+        input ის მნიშვნეოლბას და გაატანთ დამატება ბათონის ივენთს
+      </li>
+
+      <li>
+        ts ში უნდა გქონდეთ რამე ცვლადი სადაც შეინახავთ input იდან ამოღებულ მნიშვნელობას
+        და გამოაჩენთ result ის ლისტის list_item ში
+      </li>
+    </ol>
+    <div class="todo">
+      <div class="actionbar">
+        <div class="searchbar">
+          <input type="text">
+        </div>
+        <div class="addbutton">
+          <button>ADD</button>
+        </div>
+      </div>
+      <div class="result">
+        <ul class="result_list">
+          <li class="list_item">item 1</li>
+        </ul>
+      </div>
+    </div>
 </div>
+
