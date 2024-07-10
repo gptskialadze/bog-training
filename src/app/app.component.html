@@ -1,0 +1,40 @@
+<h2>საშინაო დავალება</h2>
+<p class="e_header">
+  მოცემულია იუზერის ფორმა სადაც უნდა მოახდინოთ შემდეგი დავალებების შესრულება
+</p>
+<ol class="list">
+  <li>
+    ქალაქი დროპდაუნის გადარჩევის შემდეგ < span class="city" > ელემენტში უნდა ჩაიწეროს
+    არჩეული ქალაქი
+  </li>
+  <li>
+    სურათზე მარჯვენა მხარეს არსებულ angle-right ღილაკზე დაჭერის შემდეგ უნდა შეიცვალოს
+    სურათი რანდომად (რამდენიც გინდათ იმდენი სურათი აიღეთ)
+  </li>
+  <li>
+    რეგისტრაცია ბათონი უნდა იყოს disabled თუ ვეთანხმები პირობებს არ მოვნიშნავ, 
+    და თუ მოვნიშნავ მაშინ გააქტიურდეს  რეგისტრაცია ბათონი
+  </li>
+</ol>
+<div class="form">
+  <div class="cities">
+    <label>ქალაქი</label>
+    <select>
+      <option *ngFor="let city of cities" value="city">{{city}}</option>
+    </select>
+    <span class="city">Tbilisi</span>
+  </div>
+  <div class="images">
+    <img src="../assets/person.jpg">
+    <div class="next">
+      <i class="fa fa-angle-right"></i>
+    </div>
+  </div>
+  <div class="accept">
+    <p>ვეთანხმები პირობებს</p>
+    <input type="checkbox">
+  </div>
+  <div class="submit">
+    <button>რეგისტრაცია</button>
+  </div>
+</div>
