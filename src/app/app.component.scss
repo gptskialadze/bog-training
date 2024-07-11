@@ -1,0 +1,54 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.posts {
+    list-style: none;
+}
+
+.row {
+    display: flex;
+    border: 1px solid black;
+    margin: 4px 0;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.row:hover {
+    opacity: 0.9;
+}
+.row:hover .ident {
+    color: red;
+}
+
+.ident {
+    width: 30px;
+    border-right: 1px solid green;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc {
+    padding: 12px;
+    background-color: cadetblue; 
+    width: 100%;
+    color: white;
+}
+
+.result {
+    padding: 12px;
+    font-size: 23px;
+}
+
+.container p, ol {
+    font-size: 23px;
+
+}
