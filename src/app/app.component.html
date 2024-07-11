@@ -1,0 +1,22 @@
+<div class="container">
+    <p>posts.ts ფაილში მოცემულია პოსტების ობიექტების მასივი, თქვენი მიზანია:</p>
+    <ol>
+        <li>< ul class="posts" > ეს გაიტანოთ ცალკე კომპონენტში, რომელსაც დატას clientPosts ს გადააწვდით მშობლიდან</li>
+        <li>შვილიდან თითოეულ როუზე დაკლიკების შემდეგ მშობელს უნდა გადმოეწოდოს id, რის მიხედვითაც გაფილტრავთ მშობელში არსებულ clientPosts 
+            მასივს და მშობლის result დივში აჩვენებთ მოძებნილი ობიექტის body ს
+        </li>
+    </ol>
+    <h1>Clients Posts</h1>
+<ul class="posts">
+    <li *ngFor="let data of clientPosts">
+        <div class="row">
+            <div class="ident">{{data.id}}</div>
+            <div class="desc">{{data.title}}</div>
+        </div>
+    </li>
+</ul>
+
+<div class="result">
+    
+</div>
+</div>
