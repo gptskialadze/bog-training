@@ -29,3 +29,10 @@ thead h2 {
     margin: 0 auto;
     font-size: 23px;
 }
+.fa-trash {
+    cursor: pointer;
+}
+
+.fa-trash:hover {
+    color: red;
+}

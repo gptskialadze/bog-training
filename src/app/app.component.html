@@ -3,9 +3,8 @@
  component.ts ფაილში მოცემულია clients მასივი, html ში გამოიტანეთ შედეგი *ngFor ის საშუალებით: 
 </p>
 <ol type="a">
-    <li>თუ age მეტია 18 ის კლიენტის სახელი გახდეს წითელი;</li>
-    <li>თუ resident არის y , კლიენტის სახელის გვერდით მივაწეროთ "მოქალაქე"; </li>
-    <li>სია დაალაგეთ id იების მიხედვით asc ით;</li>
+    <li>მოცემული ცხრილი გავიტანოთ ცალკე კომპონენტში და დატა გადავაწოდოთ მშობლიდან</li>
+    <li>წაშლა აიკონზე დაჭერის შემდეგ უნდა მოხდეს იმ კონკრეტული როუს წაშლა რომელსაც დავაჭერ</li>
 </ol>
 
 </div>
@@ -21,18 +20,25 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>Resident</th>
+                <th></th>
             </tr>
             <tr>
                 <th>1</th>
                 <th style="color: red">Nick - მოქალაქე</th>
                 <th>21</th>
                 <th>Y</th>
+               <th>
+                <i class="fa fa-trash"></i>
+               </th>
             </tr>
             <tr>
                 <th>2</th>
                 <th>James</th>
                 <th>17</th>
                 <th>N</th>
+                <th>
+                  <i class="fa fa-trash"></i>
+                </th>
             </tr>
         </tbody>
     </table>
