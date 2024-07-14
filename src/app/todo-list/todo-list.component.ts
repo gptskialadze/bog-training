@@ -10,5 +10,8 @@ export class TodoListComponent {
 
   addItem(item: string) {
     this.todoList.push(item);
+    window.alert("მოხდა ჩანაწერისს ცვლილება");
   }
+
+  protected readonly String = String;
 }
