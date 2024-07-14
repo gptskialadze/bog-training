@@ -10,10 +10,11 @@
       სვიჩერის ქვემოთ არის h3 ელემენტი სადაც წერია პიროვნების სახელი, აქაც
       თუ ქალია მაშინ მაუსის მიტანის დროს title ატრიბუტში დაიწეროს "ქალბატონი"
       და თუ კაცია "ბატონი", <strong>აღნიშნული div ი რომლის კლასია card_body_title უნდა გაიტანოთ ცალკე კომპონენტად
-      და <span style="color: red" >სახელი უნდა გადააწოდოთ მშობლიდან</span> </strong>
+      და <span style="color: red">სახელი უნდა გადააწოდოთ მშობლიდან</span> </strong>
     </li>
     <li>
-     <strong> უნდა შექმნათ კიდევ ერთი კომპონენტი </strong>სადაც გექნებათ Todo ლისტი , რომელიც მოიცავს ძებნის input  ს , დამატება ღილაკს
+      <strong> უნდა შექმნათ კიდევ ერთი კომპონენტი </strong>სადაც გექნებათ Todo ლისტი , რომელიც მოიცავს ძებნის input ს ,
+      დამატება ღილაკს
       და result ის ადგილს სადაც უნდა დაემატოს ჩანაწერები, როდესაც დაემატება რამე ჩანაწერი
       უნდა გამოვიდეს შეტყობინება "მოხდა ჩანაწერის ცვლილება"
     </li>
@@ -30,23 +31,24 @@
 
   </ol>
   <div class="main">
-    <div class="card">
-      <div class="card_header">
-        <div class="switcher">
-          <label class="switch"  >
-            <input type="checkbox" checked (change)="switchPerson()">
-            <span class="slider round"></span>
-          </label>
+    <app-switcher></app-switcher>
+
+
+    <div class="todo">
+      <div class="actionbar">
+        <div class="searchbar">
+          <input type="text">
+        </div>
+        <div class="addbutton">
+          <button>ADD</button>
         </div>
       </div>
-      <div class="card_body">
-        <app-card-body-title [isSwitcherOn]="isSwitcherOn"></app-card-body-title>
-        <div class="card_body_image">
-          <img src="{{currentPicture}}">
-        </div>
+      <div class="result">
+        <ul class="result_list">
+          <li class="list_item">item 1</li>
+        </ul>
       </div>
     </div>
-    <app-todo-list ></app-todo-list>
   </div>
 
 </div>

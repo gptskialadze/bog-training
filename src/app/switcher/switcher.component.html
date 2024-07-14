@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card_header">
+    <div class="switcher">
+      <label class="switch">
+        <input type="checkbox" [(ngModel)]="isMale">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="card_body">
+    <app-card-title [title]="isMale? 'ბატონი' : 'ქალბატონი'"></app-card-title>
+    <div class="card_body_image">
+      <img [src]="isMale ? '../assets/male.jpg' : '../assets/female.png'" alt="person">
+    </div>
+  </div>
+</div>

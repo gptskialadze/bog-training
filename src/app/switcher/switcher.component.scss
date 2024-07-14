@@ -3,8 +3,8 @@ body {
 }
 
 .panel {
-width: 100%;
-padding: 12px;
+  width: 100%;
+  padding: 12px;
 }
 
 
@@ -13,12 +13,13 @@ padding: 12px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
 }
+
 .topic {
   color: chocolate;
 }
 
 .list li::marker {
-color: red;
+  color: red;
 }
 
 .list li {
@@ -30,7 +31,7 @@ color: red;
 .card {
   width: 400px;
   height: auto;
-  border:1px solid black;
+  border: 1px solid black;
   padding: 12px;
 
 }
@@ -41,9 +42,6 @@ color: red;
 
 .card_body {
   width: 100%;
-}
-.card_body_title {
-  color: blue;
 }
 
 .card_body_image {
@@ -112,65 +110,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-.todo {
-  width: 700px;
-  height: auto;
-  padding: 0 0 12px;
-}
-
-.actionbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-}
-
-.searchbar {
-  flex: 2;
-}
-
-.searchbar input {
-  width: 100%;
-  padding: 12px 0;
-  border:1px solid silver;
-}
-
-.addbutton {
-  flex: 1;
-}
-
-.addbutton button {
-  width: auto;
-  background-color: rgb(30, 22, 177);
-  padding: 12px;
-  cursor: pointer;
-  color: white;
-
-}
-
-.result {
-  width: 100%;
-}
-
-.result_list {
-  width: 75%;
-  list-style-type: none;
-  margin: 22px 0;
-  padding: 0;
-}
-
-.result_list li {
-  padding: 6px;
-  background-color: rgb(96, 92, 92);
-  color: white;
-  margin: 4px 0;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
 }
