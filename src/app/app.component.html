@@ -12,29 +12,32 @@
     სურათი რანდომად (რამდენიც გინდათ იმდენი სურათი აიღეთ)
   </li>
   <li>
-    რეგისტრაცია ბათონი უნდა იყოს disabled თუ ვეთანხმები პირობებს არ მოვნიშნავ, 
+    რეგისტრაცია ბათონი უნდა იყოს disabled თუ ვეთანხმები პირობებს არ მოვნიშნავ,
     და თუ მოვნიშნავ მაშინ გააქტიურდეს  რეგისტრაცია ბათონი
   </li>
 </ol>
 <div class="form">
   <div class="cities">
     <label>ქალაქი</label>
-    <select>
-      <option *ngFor="let city of cities" value="city">{{city}}</option>
+    <select (change)="onCitiesDropdownChange($event)">
+      <option *ngFor="let city of cities">{{city}}</option>
     </select>
-    <span class="city">Tbilisi</span>
+    <span class="city" style="margin-left: 10px">selected city: {{selectedCity}}</span>
   </div>
   <div class="images">
-    <img src="../assets/person.jpg">
-    <div class="next">
-      <i class="fa fa-angle-right"></i>
+    <img src="{{getImageUrl()}}">
+    <div class="next" >
+      <button (click)="changePicture()" >
+        <i class="fa fa-angle-right" ></i>
+      </button>
     </div>
   </div>
   <div class="accept">
     <p>ვეთანხმები პირობებს</p>
-    <input type="checkbox">
+    <input type="checkbox" (change)="onAgreeOnTerms()">
   </div>
-  <div class="submit">
-    <button>რეგისტრაცია</button>
+  <div class="submit" >
+    <button [disabled] = "!agreeOnTerms" (click)="finish()">რეგისტრაცია</button>
   </div>
+
 </div>
