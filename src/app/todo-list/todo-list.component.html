@@ -1,15 +1,15 @@
 <div class="todo">
   <div class="actionbar">
     <div class="searchbar">
-      <input type="text">
+      <input type="text" #myInput>
     </div>
     <div class="addbutton" >
-      <button (click)="addItem('sada')">ADD</button>
+      <button (click)="addItem(myInput.value)">ADD</button>
     </div>
   </div>
   <div class="result">
     <ul class="result_list">
-      <li class="list_item">item 1</li>
+      <li class="list_item" *ngFor="let todoItem of todoList"> {{todoItem}}</li>
     </ul>
   </div>
 </div>

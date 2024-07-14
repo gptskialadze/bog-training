@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myapp';
+  title: string = 'myapp';
   isSwitcherOn: boolean = true;
   currentPicture: string = '../assets/male.jpg';
 

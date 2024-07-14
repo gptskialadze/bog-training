@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {AppComponent} from "../app.component";
 
 @Component({
@@ -6,8 +6,12 @@ import {AppComponent} from "../app.component";
   templateUrl: './card-body-title.component.html',
   styleUrls: ['./card-body-title.component.scss']
 })
-export class CardBodyTitleComponent extends AppComponent{
+export class CardBodyTitleComponent {
   personName: string = 'სახელი';
+
+  @Input()
+  isSwitcherOn: boolean | null = null;
+
 
   switchName() {
     if (this.isSwitcherOn) {
@@ -15,7 +19,6 @@ export class CardBodyTitleComponent extends AppComponent{
     } else {
       this.personName = 'ქალბატონი';
     }
-    console.log(this.isSwitcherOn)
   }
 
   resetName() {
