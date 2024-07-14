@@ -2,7 +2,7 @@ body {
   background-color: rgb(244, 241, 241);
 }
 
-.panel { 
+.panel {
 width: 100%;
 padding: 12px;
 }
@@ -61,7 +61,7 @@ color: red;
   height: 34px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -148,7 +148,7 @@ input:checked + .slider:before {
   padding: 12px;
   cursor: pointer;
   color: white;
-  
+
 }
 
 .result {

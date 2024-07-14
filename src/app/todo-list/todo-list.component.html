@@ -1,0 +1,22 @@
+<ng-template #actionBarTemplate>
+  <div class="actionbar">
+    <div class="searchbar">
+      <input #searchInput type="text">
+    </div>
+    <div class="addbutton">
+      <button (click)="addItem(searchInput)">ADD</button>
+    </div>
+  </div>
+  <div class="result">
+    <ul class="result_list">
+      <li *ngFor="let item of itemList">
+        <app-todo-list-item [value]="item"></app-todo-list-item>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<div class="fullscreen-container">
+  <ng-container [ngTemplateOutlet]="actionBarTemplate"></ng-container>
+</div>
+
