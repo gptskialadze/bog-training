@@ -1,0 +1,15 @@
+<div class="todo">
+  <div class="actionbar">
+    <div class="searchbar">
+      <input type="text" #myInput>
+    </div>
+    <div class="addbutton" >
+      <button (click)="addItem(myInput.value)">ADD</button>
+    </div>
+  </div>
+  <div class="result">
+    <ul class="result_list">
+      <li class="list_item" *ngFor="let todoItem of todoList"> {{todoItem}}</li>
+    </ul>
+  </div>
+</div>

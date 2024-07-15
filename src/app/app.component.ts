@@ -1,3 +1,4 @@
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myapp';
+  title: string = 'myapp';
+  isSwitcherOn : boolean = true;
+  maleImgUrl : string = '../assets/person.jpg';
+  femaleImgUrl : string = '../assets/woman.jpg';
+  currentImgUrl : string = this.maleImgUrl;
+
+  onSwitchChanged() {
+    this.isSwitcherOn  = !this.isSwitcherOn;
+
+    if(this.isSwitcherOn) {
+      this.currentImgUrl = this.maleImgUrl;
+    } else {
+      this.currentImgUrl = this.femaleImgUrl;
+    }
+  }
+  protected readonly onmouseout = onmouseout;
 }
