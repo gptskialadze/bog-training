@@ -19,7 +19,7 @@
 <div class="form">
   <div class="cities">
     <label>ქალაქი</label>
-    <select (change)="onCitiesDropdownChange($event)">
+    <select #city (change)="onCitiesDropdownChange(city.value)" >
       <option *ngFor="let city of cities">{{city}}</option>
     </select>
     <span class="city" style="margin-left: 10px">selected city: {{selectedCity}}</span>

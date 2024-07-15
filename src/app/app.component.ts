@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   ]
 
   images: string [] = [
-    "person.jpg", "second.jpg", "third.jfif"
+    "male.jpg", "second.jpg", "female.jfif"
   ]
 
   selectedCity: string = "default value";
@@ -23,8 +23,8 @@ export class AppComponent {
     return "../assets/" + image
   }
 
-  onCitiesDropdownChange(event: any) {
-    this.selectedCity = event.target.value;
+  onCitiesDropdownChange(city :string) {
+    this.selectedCity = city;
     console.log('selected city is: ' + this.selectedCity);
   }
 
