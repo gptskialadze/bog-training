@@ -1,0 +1,64 @@
+<div class="container">
+    <h2>მოცემული ფორმას დაუმატეთ შემდეგი ექშენები:</h2>
+    <ul>
+        <li>შექმენით formGroup და სახელად დაარქვით თქვენ რაც გინდათ</li>
+        <li>first და lastname ის ინფუთებს დაადეთ "აუცილებლად შესაყვანი" ვალიდატორი</li>
+        <li>email ის ველს დაადეთ "email" ის ვალიდატორი</li>
+        <li>Website Name ის "მაქსიმალური შესაყვანი სიმბოლოების სიგრძე" უნდა იყოს 10</li>
+        <li>თუ ფორმა ვალიდურია submit ზე დაჭერის შემდეგ დაილოგოს მთლიანი შევსებული ფორმა</li>
+        <li>submit ზე დაჭერის შემდეგ თუ firstName ში ჩაწერილი მნიშვნელობა არ იწყება მაღალი რესისტრით
+            გამოვიდეს შეტყობინება ალერტის სახით "სახელი უნდა იწყებოდეს მაღალი რეგისტრით"
+        </li>
+        <li>submit ზე დაჭერის შემდეგ write your message ში შეყვანილ ტექსტს დაემატოს
+            დღევანდელი რიცხვი
+        </li>
+        <li>website name ის ცვლილების დროს შეამოწმოს, თუ შეყვანილი მნიშვნელობა 
+            იქნება myvideo.ge მაშინ შეყვანილი მნიშვნელობას დაუმატოს my.ge
+        </li>
+
+    </ul>
+    <div class="text">
+       Contact us Form
+    </div>
+    <form action="#">
+       <div class="form-row">
+          <div class="input-data">
+             <input type="text" required>
+             <div class="underline"></div>
+             <label for="">First Name</label>
+          </div>
+          <div class="input-data">
+             <input type="text" required>
+             <div class="underline"></div>
+             <label for="">Last Name</label>
+          </div>
+       </div>
+       <div class="form-row">
+          <div class="input-data">
+             <input type="text" required>
+             <div class="underline"></div>
+             <label for="">Email Address</label>
+          </div>
+          <div class="input-data">
+             <input type="text" required>
+             <div class="underline"></div>
+             <label for="">Website Name</label>
+          </div>
+       </div>
+       <div class="form-row">
+       <div class="input-data textarea">
+          <textarea rows="8" cols="80" required></textarea>
+          <br />
+          <div class="underline"></div>
+          <label for="">Write your message</label>
+          <br />
+          <div class="form-row submit-btn">
+             <div class="input-data">
+                <div class="inner"></div>
+                <input type="submit" value="submit">
+             </div>
+          </div>
+          </div>
+          </div>
+    </form>
+ </div>
