@@ -7,5 +7,4 @@ import {Component} from '@angular/core';
 })
 export class SwitcherComponent {
   isMale: boolean = true;
-  personName: string = 'სახელი';
 }

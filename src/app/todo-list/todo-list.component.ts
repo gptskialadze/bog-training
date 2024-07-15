@@ -16,7 +16,7 @@ export class TodoListComponent {
     if (value) {
       this.items.push(value);
       this.snackBar.open('New todo item has been added', 'Close', {
-        duration: 300000,
+        duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'center',
       });
