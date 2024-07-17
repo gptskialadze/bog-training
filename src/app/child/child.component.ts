@@ -1,5 +1,5 @@
-import { posts } from './posts';
 import {Component, Input, SimpleChange} from '@angular/core';
+import { posts } from './posts';
 
 @Component({
   selector: 'app-child',
@@ -8,6 +8,7 @@ import {Component, Input, SimpleChange} from '@angular/core';
 })
 export class ChildComponent {
   clientPosts = posts;
+
   @Input() title: string = '';
 
   ngOnChanges(changes: { [propName: string]: SimpleChange }) {
