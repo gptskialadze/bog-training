@@ -1,15 +1,15 @@
 <div class="container">
-  
+
   <ol>
-      <li>პოსტის ძებნის input იდან ჩაწერილი მნიშვნელობა უნდა გადააწოდოთ app-child ს და 
-        app-child ში არსებული პოსტები უნდა გაფილტროთ title მნიშვნელობით, ანუ თუ
-        input იდან ჩაწერილი მნიშვნელობა არის "fa" უნდა გაიფილტროს ყველა  პოსტების "title" 
-        ფროფერთი რომელიც მოიცავს  "fa"  ს 
-      </li>
+    <li>პოსტის ძებნის input იდან ჩაწერილი მნიშვნელობა უნდა გადააწოდოთ app-child ს და
+      app-child ში არსებული პოსტები უნდა გაფილტროთ title მნიშვნელობით, ანუ თუ
+      input იდან ჩაწერილი მნიშვნელობა არის "fa" უნდა გაიფილტროს ყველა პოსტების "title"
+      ფროფერთი რომელიც მოიცავს "fa" ს
+    </li>
   </ol>
   <div class="filter">
     <label for="">პოსტის ძებნა</label>
-    <input type="text">
+    <input type="text" ngModel #filter>
   </div>
-  <app-child></app-child>
+  <app-child [title]="filter.value"></app-child>
 </div>
