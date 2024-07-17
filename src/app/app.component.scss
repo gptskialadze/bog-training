@@ -146,3 +146,19 @@ form .form-row .textarea{
     width: 40%!important;
   }
 }
+
+.copy {
+    padding: 6px;
+    width: 100px;
+    background-color: #951fea;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    backdrop-filter: blur(2deg);
+    margin: 0 16px;
+}
+
+.copy:hover {
+    opacity: 0.6;
+}
