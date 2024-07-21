@@ -12,7 +12,7 @@
         <li>submit ზე დაჭერის შემდეგ write your message ში შეყვანილ ტექსტს დაემატოს
             დღევანდელი რიცხვი
         </li>
-        <li>website name ის ცვლილების დროს შეამოწმოს, თუ შეყვანილი მნიშვნელობა 
+        <li>website name ის ცვლილების დროს შეამოწმოს, თუ შეყვანილი მნიშვნელობა
             იქნება myvideo.ge მაშინ შეყვანილი მნიშვნელობას დაუმატოს my.ge
         </li>
 
@@ -20,37 +20,37 @@
     <div class="text">
        Contact us Form
     </div>
-    <form action="#">
+    <form action="#" [formGroup]="contactFormGroup" (ngSubmit)="onSubmit()" >
        <div class="form-row">
           <div class="input-data">
-             <input type="text" required>
+             <input id="firstName" type="text" required formControlName="firstName">
              <div class="underline"></div>
-             <label for="">First Name</label>
+             <label for="firstName">First Name</label>
           </div>
           <div class="input-data">
-             <input type="text" required>
+             <input id="lastName" type="text" required formControlName="lastName">
              <div class="underline"></div>
-             <label for="">Last Name</label>
+             <label for="lastName">Last Name</label>
           </div>
        </div>
        <div class="form-row">
           <div class="input-data">
-             <input type="text" required>
+             <input id="email" type="text" required formControlName="email">
              <div class="underline"></div>
-             <label for="">Email Address</label>
+             <label for="email">Email Address</label>
           </div>
           <div class="input-data">
-             <input type="text" required>
+             <input id="websiteName" type="text" required formControlName="websiteName">
              <div class="underline"></div>
-             <label for="">Website Name</label>
+             <label for="websiteName">Website Name</label>
           </div>
        </div>
        <div class="form-row">
        <div class="input-data textarea">
-          <textarea rows="8" cols="80" required></textarea>
+          <textarea id="message" rows="8" cols="80" required formControlName="message"></textarea>
           <br />
           <div class="underline"></div>
-          <label for="">Write your message</label>
+          <label for="message">Write your message</label>
           <br />
           <div class="form-row submit-btn">
              <div class="input-data">
