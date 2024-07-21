@@ -26,7 +26,7 @@
         <li>submit ზე დაჭერის შემდეგ თუ Email Address ცარიელია, მაშინ Website Name ში ჩაიწეროს
             www.myWebsite.com
         </li>
-        <!-- <li>website name ის ცვლილების დროს შეამოწმოს, თუ შეყვანილი მნიშვნელობა 
+        <!-- <li>website name ის ცვლილების დროს შეამოწმოს, თუ შეყვანილი მნიშვნელობა
             იქნება myvideo.ge მაშინ შეყვანილი მნიშვნელობას დაუმატოს my.ge
         </li> -->
 
@@ -35,46 +35,54 @@
        Contact us Form
     </div>
 
-    <form action="#">
-        <button class="copy">COPY</button>
+    <form [formGroup]="regForm" >
+        <button class="copy" [disabled] = "isCopyDisabled" (click)="copyAction()">COPY</button>
+      <div class="form-row">
+        <h4 id = "namesMatch" [hidden]="!namesMatch">Names Match!</h4>
+      </div>
        <div class="form-row">
           <div class="input-data">
-             <input type="text" required>
              <div class="underline"></div>
-             <label for="">First Name</label>
+             <label for="firstName"></label>
+            <input id="firstName" type="text" formControlName="firstName"/>
           </div>
           <div class="input-data">
-             <input type="text" required>
              <div class="underline"></div>
-             <label for="">Last Name</label>
+             <label for="lastName"></label>
+            <input id="lastName" type="text" formControlName="lastName">
           </div>
        </div>
        <div class="form-row">
           <div class="input-data">
-             <input type="text" required>
              <div class="underline"></div>
-             <label for="">Email Address</label>
+             <label for="email"></label>
+            <input id="email" type="text" formControlName="email">
           </div>
           <div class="input-data">
-             <input type="text" required>
              <div class="underline"></div>
-             <label for="">Website Name</label>
+             <label for="website"></label>
+            <input id="website" type="text" formControlName="website">
           </div>
        </div>
        <div class="form-row">
        <div class="input-data textarea">
-          <textarea rows="8" cols="80" required></textarea>
+          <textarea id="message" formControlName="message" rows="8" cols="80" required></textarea>
           <br />
           <div class="underline"></div>
-          <label for="">Write your message</label>
+          <label for="message"></label>
           <br />
-          <div class="form-row submit-btn">
+          <div class="form-row submit-btn" (click) = "onSubmitCheck()">
              <div class="input-data">
                 <div class="inner"></div>
                 <input type="submit" value="submit">
              </div>
           </div>
           </div>
-          </div>
+       </div>
+      <div class="form-row">
+        <h4 id = "validForm" [hidden]="!isValid">{{regForm.value|json}}</h4>
+      </div>
+
     </form>
  </div>
+
