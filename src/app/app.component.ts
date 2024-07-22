@@ -52,25 +52,21 @@ export class AppComponent {
       this.isValid = false;
     }
 
-    // @ts-ignore
     if (this.regForm.value.website?.length > 10) {
       this.isValid = false;
     }
 
-    // @ts-ignore
     if (!(this.regForm.value.firstName?.at(0).toUpperCase() ===
       this.regForm.value.firstName?.at(0))) {
       alert("სახელი უნდა იწყებოდეს მაღალი რეგისტრით");
       this.isValid = false;
     }
 
-
     const currentDate = new Date().toLocaleString();
     this.regForm.patchValue({
       message: this.regForm.value.message + currentDate,
     })
 
-    // @ts-ignore
     if(this.regForm.value.firstName?.length < 4) {
       this.isCopyDisabled = true;
     }
