@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {dateTimestampProvider} from "rxjs/internal/scheduler/dateTimestampProvider";
 
 @Component({
@@ -10,44 +10,93 @@ import {dateTimestampProvider} from "rxjs/internal/scheduler/dateTimestampProvid
 export class AppComponent {
   title = 'myapp';
 
+  firstNameLastnameComparatorValidator: ValidatorFn = (control) =>{
+
+    if (control.get('firstName')?.value === control.get('lastName')?.value) {
+      return {firstNameLastnameSame: true};
+    }
+    return null;
+  }
+
+  myEmailValidator: ValidatorFn = (control) => {
+
+
+    if (control.value === null) {
+      return null;
+    }
+    if (control.value === '') {
+      return null;
+    }
+
+    console.log('in my email validator: ' + control.value.includes('@'));
+
+    if (!control.value.includes('.')) {
+      return {noDot: true};
+    }
+    if (!control.value.includes('@')) {
+      return {noAt: true};
+    }
+
+    return null;
+  }
+
   websiteRegForm: FormGroup<WebsiteRegInfo> = new FormGroup<WebsiteRegInfo>({
-    firstName: new FormControl<string>('', [Validators.required]),
-    lastName: new FormControl<string>('', {nonNullable: true}),
-    email: new FormControl<string | null>(null, [Validators.email]),
-    website: new FormControl<string | null>(null, [Validators.maxLength(10)],    ),
-    message: new FormControl<string>(''),
+    firstName: new FormControl<string>('', [Validators.required, this.firstNameLastnameComparatorValidator]),
+    lastName: new FormControl<string>('', {nonNullable: true,
+      validators: [Validators.required, Validators.minLength(10), this.firstNameLastnameComparatorValidator]}),
+    email: new FormControl<string | null>(null, [this.myEmailValidator, Validators.minLength(5), Validators.required]),
+    password: new FormControl<string | null>(null, [Validators.required, Validators.minLength(8)]),
+    confirmPassword: new FormControl<string>('', Validators.required),
   });
 
-  ngOnInit() {
-    console.log('ngOnInit');
-    (this.websiteRegForm.get('website') as FormControl<string | null>).registerOnChange(this.onWebsiteChange.bind(this));
+  get lastName() {
+    return this.websiteRegForm.controls.lastName;
   }
+
+  get firstName() {
+    return this.websiteRegForm.controls.firstName;
+  }
+
+  get password() {
+    return this.websiteRegForm.controls.password;
+  }
+
+  get email() {
+    return this.websiteRegForm.controls.password;
+  }
+
+  get confirmPassword() {
+    return this.websiteRegForm.controls.confirmPassword;
+  }
+
+  // ngOnInit() {
+  //   console.log('ngOnInit');
+  //   (this.websiteRegForm.controls.website as FormControl<string | null>).registerOnChange(this.onWebsiteChange.bind(this));
+  // }
   submit() {
     console.log('checking form validity');
 
     if ( !/[A-Z]/.test(<string>this.websiteRegForm.value.firstName?.charAt(0))) {
       alert("სახელი უნდა იწყებოდეს მაღალი რეგისტრით");
     }
-
-    this.websiteRegForm.value.message = new Date() + ': ' + this.websiteRegForm.value.message;
-
     console.log(this.websiteRegForm.value);
   }
 
-  onWebsiteChange(newValue: any) {
-    console.log('website changed ' + newValue);
-    if (this.websiteRegForm.value.website !== null && this.websiteRegForm.value.website !== undefined
-      && this.websiteRegForm.value.website === 'myvideo.ge') {
-
-      this.websiteRegForm.value.website = this.websiteRegForm.value.website + ', my.ge';
-    }
-  }
+  // onWebsiteChange(newValue: any) {
+  //   console.log('website changed ' + newValue);
+  //   if (this.websiteRegForm.value.website !== null && this.websiteRegForm.value.website !== undefined
+  //     && this.websiteRegForm.value.website === 'myvideo.ge') {
+  //
+  //     this.websiteRegForm.value.website = this.websiteRegForm.value.website + ', my.ge';
+  //   }
+  // }
+  protected readonly JSON = JSON;
 }
 
 export interface WebsiteRegInfo {
   firstName: FormControl<string | null>;
   lastName: FormControl<string>;
   email: FormControl<string | null>;
-  website: FormControl<string | null>;
-  message: FormControl<string | null>;
+  password: FormControl<string | null>;
+  confirmPassword: FormControl<string | null>;
 }

@@ -23,11 +23,18 @@
   <form [formGroup]="websiteRegForm">
     <div class="form-row">
       <div class="input-data">
+        <div style="color: red; font-size: smaller" *ngIf="firstName.touched && !firstName.valid">
+          <p>სახელი არავალიდურია</p>
+        </div>
         <input type="text" formControlName="firstName">
         <div class="underline"></div>
         <label for="">First Name</label>
       </div>
       <div class="input-data">
+        <div style="color: red; font-size: smaller" *ngIf="lastName.touched && !lastName.valid">
+          <div>გვარი არავალიდურია {{confirmPassword.errors | json}}</div>
+        </div>
+<!--        <br>-->
         <input type="text" formControlName="lastName">
         <div class="underline"></div>
         <label for="">Last Name</label>
@@ -35,22 +42,31 @@
     </div>
     <div class="form-row">
       <div class="input-data">
+        <div style="color: red; font-size: smaller" *ngIf="email.touched && !email.valid">
+          <div>მეილი არავალიდურია</div>
+        </div>
         <input type="text" formControlName="email">
         <div class="underline"></div>
         <label for="">Email Address</label>
       </div>
       <div class="input-data">
-        <input type="text" formControlName="website" [value]="this.websiteRegForm.value.website">
+        <div style="color: red; font-size: smaller" *ngIf="password.touched && !password.valid">
+          <div>პაროლი არავალიდურია</div>
+        </div>
+        <input type="text" formControlName="password" [value]="this.websiteRegForm.value.password">
         <div class="underline"></div>
-        <label for="">Website Name</label>
+        <label for="">password</label>
       </div>
     </div>
     <div class="form-row">
       <div class="input-data textarea">
-        <textarea rows="8" cols="80" formControlName="message"></textarea>
+        <div style="color: red; font-size: smaller" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+          <div>პაროლის დამოწმება აუცილებელია {{confirmPassword.errors}}</div>
+        </div>
+        <textarea rows="8" cols="80" formControlName="confirmPassword"></textarea>
         <br/>
         <div class="underline"></div>
-        <label for="">Write your message</label>
+        <label for="">Confirm Your password</label>
         <br/>
         <div class="form-row submit-btn">
           <div class="input-data">
