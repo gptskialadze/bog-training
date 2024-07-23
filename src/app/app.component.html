@@ -1,0 +1,44 @@
+<pre>
+  <h2>
+1) Cities დროპპდაუნი არის შევსებული და street ის არა , რადგანაც  street დამოკიდებულია Cities ზე, ამიტომ Cities გადარჩევის შემდეგ უნდა შეივსოს street ის დროპდაუნი შესაბამისი ქალაქის არჩევის მიხედვით. მაგალითად თუ ავირჩიე Tbilisi მაშინ შეივსოს (street1 Tbilisi, street2 Tbilisi, street3 Tbilisi) და ა.შ
+2) როდესაც გადავირჩევ ორივე დროპდაუნს(Cities და street) მაგ დროს გაფილტროს  ცხრილი შესაბამისი არჩეული პარამეტრებით.
+3) თუ Street უკვე შევსებულია მაშინ Street ის ან Cities ის გადარჩევის დროს  უნდა გაფილტროს ცხრილი, შემდეგი პრიონციპით: მაგალიტად Cities თუ ავირჩიე Tbilisi და STREET ში street1 Tbilisi მაშინ ცხრილი სწორედ ამ მონაცემებით გაფილტრავს 
+3. გვაქვს Names ინფუთი რომელიც მუშაობს როგორც აუტოკომპლიტი რაც იმას ნიშნავს რომ შეყვანილ მონაცემებს ეძებს ლაივ რეჟიმში ყოველი 3 წამის პერიოდში აქვს დაყოვნება და შეყვანიული მოცნაცემებით ფილტრავს ცხრილის ოთხივე ველს (ID, Street, names, Citiees).
+
+  </h2>
+</pre>
+
+<div class="form">
+  <div class="filters">
+    <div>
+      <label>Cities</label>
+      <select class="form-control select">
+        <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+      </select>
+    </div>
+        <div>
+      <label>Street</label>
+      <select class="form-control select"></select>
+    </div>
+        <div>
+      <label>Names</label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="list">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>CITIES</th>
+        <th>STREET</th>
+        <th>NAME</th>
+      </tr>
+        <tr *ngFor="let data of data">
+        <th>{{data.id}}</th>
+        <th>{{data.city}}</th>
+        <th>{{data.street}}</th>
+        <th>{{data.name}}</th>
+      </tr>
+    </table>
+  </div>
+</div>
