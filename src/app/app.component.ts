@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {data, cities, streets} from './data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
+  data = data;
+  cities = cities;
+  streets = streets;
 }
