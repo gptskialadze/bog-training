@@ -1,0 +1,37 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1px;
+}
+header {
+    background-color: rgb(13, 36, 168);
+    width: 100%;
+    color: white;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px;
+}
+
+header ul a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    transition: all 0.3s;
+    padding: 8px;
+}
+
+header ul a:hover {
+    opacity: 0.6;
+    border-bottom: 1px solid white;
+}
+
+.active {
+    background-color: green !important;
+  
+}

@@ -1,0 +1,28 @@
+.btn {
+    width: 220px;
+    border: none;
+    background-color: rgba(0, 128, 0, 0.772);
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.with-id {
+    margin: 0 12px;
+    background-color: blue;
+}
+
+.with-query {
+    margin: 0 12px;
+    background-color: rgb(255, 21, 0);
+}
+
+
+.btn:hover {
+    opacity: 0.6;
+
+}
