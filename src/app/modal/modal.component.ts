@@ -1,7 +1,5 @@
 import { Component, OnInit, Optional, SkipSelf } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-import { AppService } from '../app.service';
-import { skip } from 'rxjs';
 
 @Component({
   selector: 'app-modal',
@@ -13,8 +11,7 @@ export class ModalComponent implements OnInit {
   
   mode!: string;
   data: any;
-  constructor(public  modalRef: MdbModalRef<ModalComponent>,
-    private http: AppService
+  constructor(public  modalRef: MdbModalRef<ModalComponent>
   ) {}
 
   ngOnInit(): void {
@@ -30,22 +27,10 @@ export class ModalComponent implements OnInit {
   }
 
   addUsers(username: string, age: string, birthdate: string) {
-    this.http.addUsers({
-      username: username,
-      age: age,
-      birthdate: birthdate
-    }).subscribe(() => {
-      this.modalRef.close("done")
-    })
+
   }
   editUser(username: string, age: string, birthdate: string, id: string) {
-    this.http.editUsers({
-      username: username,
-      age: age,
-      birthdate: birthdate
-    }, id).subscribe(() => {
-      this.modalRef.close("done")
-    })
+
   }
   
   close(): void {

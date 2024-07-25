@@ -41,20 +41,19 @@
            </tr>
          </thead>
          <tbody>
-           <tr *ngFor="let data of data">
-             <td>{{data.username}}</td>
-             <td>{{data.age}}</td>
-             <td>{{data.birthdate}}</td>
+           <tr>
+             <td>USER1</td>
+             <td>23</td>
+             <td>20-20-2000</td>
              <td>
                <button type="button"
                 class="btn btn-success" 
                 data-target="#exampleModal"
-                (click)="openModal('edit', data)"><i class="fa fa-edit"></i>
+                (click)="openModal('edit', {username: 'USER1', age: 23, birthdate: '20-20-2000'})"><i class="fa fa-edit"></i>
                </button>
              <button 
               type="button"
-              class="btn btn-danger"
-              (click)="deleteUser(data.id)"><i class="fa fa-trash"></i></button>
+              class="btn btn-danger"><i class="fa fa-trash"></i></button>
              </td>
            </tr>
          </tbody>
