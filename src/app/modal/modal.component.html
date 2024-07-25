@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="email" #username class="form-control" id="exampleInputEmail1"
+           aria-describedby="emailHelp" [value]="mode == 'edit' && data.username" >
+         </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Age</label>
+          <input type="number" #age class="form-control" id="exampleInputPassword1" 
+          [value]="mode == 'edit' && data.age">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Birthdate</label>
+            <input type="date" #birthdate class="form-control" id="exampleInputPassword1" 
+            [value]="mode == 'edit' && data.birthdate">
+          </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary" (click)="saveData(username.value, age.value, birthdate.value)">Save changes</button>
+  </div>

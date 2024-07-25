@@ -1,0 +1,31 @@
+.container {
+    padding: 2rem 0rem;
+  }
+  
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+  
+  .table-image {
+    td, th {
+      vertical-align: middle;
+    }
+  }
+
+button ~ button {
+    margin-left: 12px;
+  }
+
+  .actions {
+    text-align: right;
+    margin: 0 0 3px;
+  }
+  .actions button {
+    background: none;
+    border: none;
+  }
+
+  .actions button {
+    font-size: 23px;
+    color: rgb(108, 107, 105);
+  }

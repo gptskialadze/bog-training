@@ -1,0 +1,64 @@
+<div class="container">
+   <pre>
+      1. ცხრილის დამატება ღილაკზე დაჭერის შემდეგ გამოდის მოდალი, სადაც უნდა შეავსოთ ფორმის მონაცემები
+      მოდალის დასეივების შემდეგ უნდა გამოიძახოთ სერვისი https://bog-angular-training-default-rtdb.asia-southeast1.firebasedatabase.app/users.json
+      POST ით
+      2. ჩანაწერების რედაქტირება ღილაკზე დაჭერის შემდეგ გამოდის მოდალი სადაც უკვე ჩასეტილი გხვდებათ არჩეული დატა. 
+      დასეივებაზე დაჭერის შემდეგ უნდა გამოიძახოთ https://bog-angular-training-default-rtdb.asia-southeast1.firebasedatabase.app/users.json
+      PUT ით, რადგანაც firebase ს აქვს სპეციფიკაცია უნიკალურობაზე ტქვენი მიზანია PUT მეთოდში მიიღოთ ასეთი დატა
+      https://bog-angular-training-default-rtdb.asia-southeast1.firebasedatabase.app/users/-O2eM4CCodwpAenY0eSn სადაც -O2eM4CCodwpAenY0eSn არის უნიკალური
+      3. ჩანაწერების ჭაშლა ღილაკზე დაჭერის შემდეგ უნდა გამოიძახოთ https://bog-angular-training-default-rtdb.asia-southeast1.firebasedatabase.app/users.json 
+      DELETE მეთოდით რომელსაც გადასცემთ უნიკალურს 
+      4. ხოლო პირველადი დატა უნდა დახატოთ https://bog-angular-training-default-rtdb.asia-southeast1.firebasedatabase.app/users.json
+      GET მეთოდით 
+      დაბრუნებული დატა უნდა მიიღოთ ასეთი
+      {{'Object.keys(data).forEach((e: any) => {
+        this.data = [...this.data, {
+          id: e,
+          username: data[e].username,
+          age: data[e].age,
+          birthdate: data[e].birthdate,
+        } ]
+        
+      })'}}
+   
+   </pre>
+   <div class="row">
+     <div class="col-12">
+      <div class="actions">
+         <button (click)="openModal('add')">
+           <span>Add Item</span> &nbsp;<i class="fa fa-plus"></i>
+         </button>
+      </div>
+       <table class="table table-bordered">
+         <thead>
+         
+           <tr>
+             <th scope="col">User Name</th>
+             <th scope="col">Age</th>
+             <th scope="col">Birthdate</th>
+             <th scope="col">Actions</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let data of data">
+             <td>{{data.username}}</td>
+             <td>{{data.age}}</td>
+             <td>{{data.birthdate}}</td>
+             <td>
+               <button type="button"
+                class="btn btn-success" 
+                data-target="#exampleModal"
+                (click)="openModal('edit', data)"><i class="fa fa-edit"></i>
+               </button>
+             <button 
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteUser(data.id)"><i class="fa fa-trash"></i></button>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div>
