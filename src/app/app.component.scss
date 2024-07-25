@@ -35,3 +35,29 @@ header ul a:hover {
     background-color: green !important;
   
 }
+
+.form-control {
+    width: 427px;
+    padding: 12px;
+    background: none;
+    border:1px solid green;
+    margin: 0 0 12px;
+}
+
+.section label, input, button {
+    display: block;
+    margin: 4px 0 3px;
+}
+
+.btn {
+    width: 220px;
+    border: none;
+    background-color: rgba(0, 11, 128, 0.772);
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

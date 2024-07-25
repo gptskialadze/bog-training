@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="list">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>CITIES</th>
+        <th>STREET</th>
+        <th>NAME</th>
+      </tr>
+        <tr *ngFor="let data of data">
+        <th>{{data.id}}</th>
+        <th>{{data.city}}</th>
+        <th>{{data.street}}</th>
+        <th>{{data.name}}</th>
+      </tr>
+    </table>
+  </div>
