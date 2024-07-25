@@ -1,5 +1,5 @@
 <pre>
-   1. შექმენით როუტინგი eager loading ით მოცემული მენიუების მიხედვით , home, news, about.
+   1. შექმენით როუტინგი eager loading ით მოცემული მენიუების მიხედვით , home, news, about. როუტინგი დაამისამართეთ content დივში
    home ზე დჭერის შემდეგ გადავიდეს HomeComponent  ზე და ა.შ;
    2. შექმენით 404 Error Page ნებისმიერი არასწორი როუტის აკრეფის დროს გადავიდეს 404 ზე;
    3. თითოეულ ტაბს გაუკეთეთ activeLink რომელიც გულისხმობს ტაბზე დაჭერის შემდეგ ამ ტაბის მწვანე ფონის მიცემას, გამოიყენეთ routerLinkActive 
@@ -15,18 +15,18 @@
       <nav>
          <ul>
             <li>
-               <a routerLink="home" routerLinkActive="active">Home</a>
+               <a>Home</a>
             </li>
             <li>
-               <a routerLink="news" routerLinkActive="active">News</a>
+               <a>News</a>
             </li>
             <li>
-               <a routerLink="about" routerLinkActive="active">About</a>
+               <a>About</a>
             </li>
          </ul>
       </nav>
    </header>
    <div class="content">
-      <router-outlet></router-outlet>
+   
    </div>
 </div>
