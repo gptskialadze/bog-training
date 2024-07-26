@@ -1,0 +1,8 @@
+<div class="main">
+    <div class="body" (mouseover)="showOverlay()" (mouseout)="hideOverlay()">
+        <ng-content select="[body]"></ng-content>
+    </div>
+    <div class="popup"  [ngClass]="isOverlayShow ? 'show' : 'hide'"> 
+        <ng-content select="[popup]"></ng-content>
+    </div>
+</div>
