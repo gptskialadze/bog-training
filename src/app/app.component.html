@@ -23,18 +23,13 @@
                 <th>Age</th>
                 <th>Resident</th>
             </tr>
-            <tr>
-                <th>1</th>
-                <th style="color: red">Nick - მოქალაქე</th>
-                <th>21</th>
-                <th>Y</th>
+            <tr *ngFor="let data of clients">
+                <th>{{data.id}}</th>
+                <th>{{data.name}}</th>
+                <th [style.color]=" data.age > 18 && 'red' ">{{data.age | agePipe }} </th>
+                <th>{{data.resident}} {{data.resident == 'Y' && 'მოქალაქე' || '' }}</th>
             </tr>
-            <tr>
-                <th>2</th>
-                <th>James</th>
-                <th>17</th>
-                <th>N</th>
-            </tr>
+    
         </tbody>
     </table>
 </div>

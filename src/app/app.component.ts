@@ -14,5 +14,5 @@ export class AppComponent {
     { id: 5, name: "Name5", age: 25, resident: "Y", birthDate: '20/20/1999' },
     { id: 4, name: "Name4", age: 17, resident: "N", birthDate: '20/20/2010' },
    
-  ]
+  ].sort((a, b) => a.id - b.id)
 }
