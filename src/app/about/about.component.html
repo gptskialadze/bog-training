@@ -1,6 +1,5 @@
 <p>Enter Search Word</p>
-<input type="text" class="form-control">
+<input type="text" class="form-control" #txt>
 <br>
-<button class="btn">Nav To Home</button>
-<button class="btn with-id">Nav To Home With ID</button>
-<button class="btn with-query">Nav To Home With Query</button>
+<button class="btn with-id" (click)="navigateToHomeWithId(txt.value)">Nav To Home With ID</button>
+<button class="btn with-query" (click)="navigateToHomeWithQuery(txt.value)">Nav To Home With Query</button>

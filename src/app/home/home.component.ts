@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  data = [
+export class HomeComponent implements OnInit {
+  list = [
     {
       id: 1,
       city: 'Tbilisi',
@@ -61,6 +62,27 @@ export class HomeComponent {
       street: 'street3 Batumi',
       name: 'name3 Batumi'
     }
-  ]
+  ];
+
+  constructor(private actRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.actRoute.params.subscribe((param: any) => {
+      this.list = param.id ? this.list.filter((item: any) => item.id == param['id'] 
+      || item.city.toLowerCase().includes(param['id']) 
+      || item.street.toLowerCase().includes(param['id'])
+      || item.name.toLowerCase().includes(param['id'])) 
+      : this.list
+    })
+
+    this.actRoute.queryParams.subscribe((param: any) => {
+      this.list = param.id ? this.list.filter((item: any) => item.id == param['id'] 
+      || item.city.toLowerCase().includes(param['id']) 
+      || item.street.toLowerCase().includes(param['id'])
+      || item.name.toLowerCase().includes(param['id'])) 
+      : this.list
+    })
+    
+  }
   
 }

@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myapp';
+  registerUser(username: string) {
+      this.setUserInfo(username)
+  }
+
+  getUserInfo() {
+    return localStorage.getItem("userInfo")
+  }
+
+  setUserInfo(username: string) {
+    localStorage.setItem("userInfo", username)
+  }
 }
