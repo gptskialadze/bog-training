@@ -14,5 +14,11 @@ export class AppComponent {
     { id: 5, name: "Name5", age: 25, resident: "Y", birthDate: '20/20/1999' },
     { id: 4, name: "Name4", age: 17, resident: "N", birthDate: '20/20/2010' },
    
-  ]
+  ];
+
+  deleteItem(e: any) {
+    console.log(e);
+    const findItem: any = this.clients.find((item: any) => e == item.id)   
+    this.clients.splice(this.clients.indexOf(findItem), 1)
+  }
 }

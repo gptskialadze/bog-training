@@ -11,39 +11,5 @@
 </div>
 
 <div class="container">
-    <table>
-        <thead>
-            <h2>Clients List</h2>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Resident</th>
-                <th>BirthDate</th>
-                <th></th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th style="color: red">Nick - მოქალაქე</th>
-                <th>21</th>
-                <th>Y</th>
-                <th>20/20/2024</th>
-               <th>
-                <i class="fa fa-trash"></i>
-               </th>
-            </tr>
-            <tr>
-                <th>2</th>
-                <th>James</th>
-                <th>17</th>
-                <th>N</th>
-                <th>20/20/2020</th>
-                <th>
-                  <i class="fa fa-trash"></i>
-                </th>
-            </tr>
-        </tbody>
-    </table>
+   <app-child [data]="clients" (emitEvent)="deleteItem($event)"></app-child>
 </div>

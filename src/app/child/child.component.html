@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <h2>Clients List</h2>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Resident</th>
+            <th>BirthDate</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let data of data">
+            <th>{{data.id}}</th>
+            <th>{{data.name}}</th>
+            <th>{{data.age}}</th>
+            <th>{{data.resident}}</th>
+            <th>{{data.birthDate | dateFormat}}</th>
+           <th>
+            <i class="fa fa-trash" (click)="deleteItem(data.id)"></i>
+           </th>
+        </tr>
+    
+    </tbody>
+</table>
