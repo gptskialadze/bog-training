@@ -12,5 +12,29 @@
         <option *ngFor="let street of (streets$ | async)">{{street}}</option>
       </select>
     </div>
+    <div>
+      <label>Names</label>
+      <input type="text" formControlName="name" class="form-control">
+    </div>
+  </div>
+  <div class="list">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>CITIES</th>
+        <th>STREET</th>
+        <th>NAME</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of (filteredData$ | async)">
+        <td>{{data.id}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.street}}</td>
+        <td>{{data.name}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
