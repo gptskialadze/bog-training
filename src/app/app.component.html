@@ -28,7 +28,7 @@
 
 
     <label>Dropdown</label>
-    <select class="form-control select">
+    <select class="form-control select" formControlName="dropdown">
       <option value="TB">Tbilisi</option>
       <option value="QT">Qutaisi</option>
       <option value="BT">Batumi</option>
@@ -38,17 +38,17 @@
   <div class="radios">
     <div class="radio">
       <label>Checkbox 1</label>
-      <input type="checkbox" class="radio-control" name="radio-control">
+      <input type="checkbox" class="radio-control" name="radio-control" [checked]="checkbox1" #chk1>
     </div>
     <div class="radio">
-    <label>Checkbox 2</label>
-    <input type="checkbox" class="radio-control" name="radio-control">
+      <label>Checkbox 2</label>
+      <input type="checkbox" class="radio-control" name="radio-control" [checked]="checkbox2" #chk2>
     </div>
-       <div class="radio">
-    <label>Checkbox3</label>
-    <input type="checkbox" class="radio-control" name="radio-control">
+    <div class="radio">
+      <label>Checkbox3</label>
+      <input type="checkbox" class="radio-control" name="radio-control" [checked]="checkbox3" #chk3>
     </div>
 
   </div>
-    <button class="submit">SUBMIT</button>
+  <button class="submit" [disabled]="!(chk3.checked && chk2.checked && chk1.checked)" (click)="onSubmit()">SUBMIT</button>
 </div>
