@@ -12,20 +12,21 @@
   </h2>
 </pre>
 
-<div class="form">
+<div class="form" [formGroup]="valuesForm">
   <div class="inputs">
-    <label>Iput 1</label>
-    <input type="text" class="form-control">
-    
-    
+    <div>
+      <label>Iput 1</label>
+      <input type="text" class="form-control" formControlName="value1">
+    </div>
+
     <label>Iput 2</label>
-    <input type="text" class="form-control">
-    
-        
+    <input type="text" class="form-control" formControlName="value2">
+
+
     <label>Iput 3</label>
-    <input type="text" class="form-control" disabled>
-    
-            
+    <input type="text" class="form-control" formControlName="value3" [disabled]="!value3?.valid">
+
+
     <label>Dropdown</label>
     <select class="form-control select">
       <option value="TB">Tbilisi</option>
@@ -33,7 +34,7 @@
       <option value="BT">Batumi</option>
     </select>
   </div>
-  
+
   <div class="radios">
     <div class="radio">
       <label>Checkbox 1</label>
@@ -47,7 +48,7 @@
     <label>Checkbox3</label>
     <input type="checkbox" class="radio-control" name="radio-control">
     </div>
-  
+
   </div>
     <button class="submit">SUBMIT</button>
 </div>
