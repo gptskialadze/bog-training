@@ -6,7 +6,6 @@ import { HttpClientModule } from "@angular/common/http"
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { LoginGuard } from './login/login.guard';
 
 const routes: Routes = [
   {
@@ -15,8 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    component: MainComponent,
-    canActivate: [LoginGuard]
+    component: MainComponent
   }
 ];
 @NgModule({

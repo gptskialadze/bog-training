@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  username: string = JSON.parse(localStorage.getItem("userInfo") || "").username
+
 }
