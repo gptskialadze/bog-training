@@ -1,15 +1,47 @@
-<div class="container">
-    <form>
+<div class="container" style="margin: 12px auto;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="login">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="main">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Pricing</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="main">
+    <form [formGroup]="myForm">
        <div class="form-group">
          <label for="exampleInputEmail1">Username</label>
-         <input type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+         <input type="text" formControlName="username"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
        </div>
        <br>
        <div class="form-group">
          <label for="exampleInputPassword1">Password</label>
-         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
        </div>
        <br>
-       <button type="submit" class="btn btn-primary">Submit</button>
+       <div class="form-group">
+        <label for="exampleInputPassword1">Street</label>
+        <input type="text" formControlName="street" class="form-control" id="exampleInputPassword1" placeholder="Street">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input type="text" formControlName="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+      </div>
+      <br>
+       <button type="submit" class="btn btn-primary" (click)="login($event)">Submit</button>
      </form>
+     
  </div>
