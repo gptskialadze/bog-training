@@ -9,15 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   constructor(private router: Router) {}
-  submited: boolean = false;
+
   ngOnInit(): void {
     this.initForm();
   }
   myForm!: FormGroup;
   login(e: any) {
-    this.submited = true;
     e.preventDefault()
-     this.router.navigate(['main'])
   }
 
   initForm() {
