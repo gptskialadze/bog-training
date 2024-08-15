@@ -8,25 +8,16 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private actRoute: ActivatedRoute) {}
+  constructor(private router: Router) {}
   submited: boolean = false;
   ngOnInit(): void {
     this.initForm();
-    this.actRoute.data.subscribe((e: any) => {
-      this.myForm.patchValue(e.data);
-      if (this.myForm.valid) {
-        this.submited = true;
-      } else {
-        this.submited = false;
-      }
-    })
+
     
   }
   myForm!: FormGroup;
   login(e: any) {
-    this.submited = true;
-    e.preventDefault()
-     this.router.navigate(['main'])
+
   }
 
   initForm() {

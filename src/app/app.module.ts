@@ -7,18 +7,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginGuard } from './login/login.guard';
-import { LoginResolver } from './login/login.resolver';
-
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    canDeactivate: [LoginGuard],
-    resolve: 
-      {
-        data: LoginResolver
-      }
     
   },
   {
