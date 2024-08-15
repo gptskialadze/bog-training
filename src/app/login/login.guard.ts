@@ -7,7 +7,6 @@ import { Observable } from "rxjs";
 })
 export class LoginGuard implements CanDeactivate<any> {
   canDeactivate(component: any, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log(component.myForm.status, 'componenttt')
       if (component.myForm.status == "VALID" && component.submited) {
         return true
       } else {

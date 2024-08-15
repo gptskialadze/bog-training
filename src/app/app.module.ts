@@ -6,19 +6,25 @@ import { HttpClientModule } from "@angular/common/http"
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { LoginGuard } from './login/login.guard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginGuard } from './login/login.guard';
+import { LoginResolver } from './login/login.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    canDeactivate: [LoginGuard]
+    canDeactivate: [LoginGuard],
+    resolve: 
+      {
+        data: LoginResolver
+      }
+    
   },
   {
     path: 'main',
     component: MainComponent,
-    
+   
   }
 ];
 @NgModule({
