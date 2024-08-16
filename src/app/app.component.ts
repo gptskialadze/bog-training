@@ -13,8 +13,7 @@ export class AppComponent implements OnInit {
 
    ngOnInit() {
     this.initForm();
-    this.setStreet();
-    this.changeCheckbox()
+    this.setStreet()
    }
 
    myForm!: FormGroup;
@@ -28,20 +27,6 @@ export class AppComponent implements OnInit {
     .subscribe((value: string) => {
        let street = cities.find((item: any) => item.value == value);
        this.myForm.get("street")?.setValue(street?.street);
-       this.myForm.get("male")?.setValue(true)
-    })
-  }
-
-  changeCheckbox() {
-    let male: any = this.myForm.get("male")?.valueChanges;
-    let female: any = this.myForm.get("female")?.valueChanges
-    merge(male, female)
-    .subscribe((res) => {
-      if (this.myForm.get("male")?.value || this.myForm.get("female")?.value) {
-        this.showButton = true
-      } else {
-        this.showButton = false
-      }
     })
   }
 
