@@ -9,5 +9,12 @@
             <label>Street</label>
             <input class="form-control" type="text" formControlName="street">
         </div>
+        <div class="gender">
+            <label style="display: inline;">Male</label>
+            <my-checkbox formControlName="male"></my-checkbox>
+            <label style="display: inline;">Female</label>
+            <my-checkbox formControlName="female"></my-checkbox>
+        </div>
+        <button class="save" *ngIf="showButton">Save</button>
     </form>
 </div>

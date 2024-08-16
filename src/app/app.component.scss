@@ -38,3 +38,27 @@ select {
     opacity: 0.6;
 
 }
+
+.gender input {
+  margin-left: 12px;
+  width: 15px;
+}
+
+.gender label ~ label {
+    margin-left: 12px;
+}
+
+.save {
+    padding: 5px 23px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.save:hover {
+    opacity: 0.7;
+}
