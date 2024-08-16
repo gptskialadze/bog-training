@@ -1,9 +1,24 @@
+
 <div class="main">
+    <pre>
+        გვაქვს ორი formControl ესენია city  და  street:
+        ჩვენი მიზანია :
+         1. city ის select გავიტანოთ ცალკე კომპონენტად და დავარქვათ my-select. 
+         2. ამის შემედგ როდესაც გადავირჩევ city ს გაფილტროს cities მასივი value ს მიხედვით
+        და street ინფუთში ჩასეტოს შესაბამისი street. 
+         3. SET DATA ღილაკზე დაჭერის შემდეგ city ველში ჩასეტოს Tbilisi რაც ავტომატურად გამოიწვევს
+         street ის ჩასეტვასაც
+    
+    </pre>
     <form [formGroup]="myForm">
         <div class="selects">
             <label>Cities</label>
-            <my-select formControlName="city"></my-select>
-            <span class="set-data" (click)="setData()">SET DATA</span>
+            <select class="form-control" formControlName="city">
+               <option *ngFor="let data of cities" [value]="data.value">
+                {{data.name}}
+               </option>
+            </select>
+            <span class="set-data">SET DATA</span>
         </div>
         <div class="street">
             <label>Street</label>

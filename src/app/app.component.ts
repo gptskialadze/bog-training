@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { cities } from './cities';
 
@@ -7,32 +7,20 @@ import { cities } from './cities';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-   
+export class AppComponent {
+   cities = cities
 
    ngOnInit() {
-    this.initForm();
-    this.setStreet();
+    this.initForm()
    }
 
    myForm!: FormGroup;
-
-   setData() {
-    this.myForm.get("city")?.setValue("TB")
-   }
    
-  setStreet() {
-    this.myForm.get("city")?.valueChanges
-    .subscribe((value: string) => {
-       let street = cities.find((item: any) => item.value == value);
-       this.myForm.get("street")?.setValue(street?.street)
-    })
-  }
+
 
    initForm() {
     this.myForm = new FormGroup({
-      city: new FormControl(""),
-      street: new FormControl("")
+      city: new FormControl()
     })
    }
 }
