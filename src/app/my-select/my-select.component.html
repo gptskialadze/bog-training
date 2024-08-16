@@ -1,0 +1,5 @@
+<select class="form-control" [(ngModel)]="value">
+    <option *ngFor="let data of cities" [value]="data.value">
+     {{data.name}}
+    </option>
+ </select>

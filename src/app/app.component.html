@@ -1,0 +1,13 @@
+<div class="main">
+    <form [formGroup]="myForm">
+        <div class="selects">
+            <label>Cities</label>
+            <my-select formControlName="city"></my-select>
+            <span class="set-data" (click)="setData()">SET DATA</span>
+        </div>
+        <div class="street">
+            <label>Street</label>
+            <input class="form-control" type="text" formControlName="street">
+        </div>
+    </form>
+</div>
