@@ -1,9 +1,9 @@
 <div class="main">
     <pre>
         გვაქვს ორი ჩეკბოქსი, Male  და Female, თქვენი მიზანია:
-         1. შექმენით ჩეკბოქსის ქასთომ კომპონენტი და დაარქვით my-checkbox 
+         1. შექმენით ჩეკბოქსის ქასთომ კომპონენტი და დაარქვით my-checkbox
          2. რომელიმე ჩეკბოქსის მონიშნვნის დროს გამოჩნდეს ღილაკი save, თუ არცერთი არ იქნება მონიშნული
-         მაშინ გაქრეს ეს ღილაკი 
+         მაშინ გაქრეს ეს ღილაკი
          3. ღილაკ SET DATA ზე დაჭერის შემდეგ ავტომატურად მოინიშნოს male ჩეკბოქსი
     </pre>
     <form [formGroup]="myForm">
@@ -18,9 +18,9 @@
         </div>
         <div class="gender">
             <label style="display: inline;">Male</label>
-            <input type="checkbox" formControlName="male">
+            <app-my-checkbox formControlName="male"></app-my-checkbox>
             <label style="display: inline;">Female</label>
-            <input type="checkbox" formControlName="female">
+            <app-my-checkbox formControlName="female"></app-my-checkbox>
         </div>
         <button class="save" *ngIf="showButton">Save</button>
     </form>
