@@ -1,5 +1,30 @@
-<div *appDirective="let img; let ctrl = controler" class="slider">
-    <button (click)="ctrl.prev()">prev</button>
-    <img [src]="img">
-    <button (click)="ctrl.next()">next</button>
+<div style="width: 900px; margin: 10px auto; font-size: 23px;">
+
+    გვაქვს div slider რომელსაც აქვს ორი ბათონი და სურათი. 
+    <li>
+        შექმენით სტრუქტურული დირექტივა და რაც გინდათ დაარქვით,
+    </li>
+    <li>
+        ეს დირექტივა გაუკეთეთ div slider  ს 
+    </li>
+    <li>
+        ამ დირექტივაში გექნებათ სურათების დატა 
+        data = ["https://fps.cdnpk.net/images/home/subhome-ai.webp?w=649&h=649", 
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMz1-2NMaNL-cuI-y6BCe0wnUafeKfxhQVl6RjrAGHctWV1zuq0QpVQ7aQR1joUBZTD_U&usqp=CAU"] 
+        და უნდა აამუშაოთ prev და next ბათონზე რომ შეიცვალოს ამ სურათის src. 
+    </li>
+    <li>
+        ყველა ლოგიკა სლაიდერის უნდა გეწეროთ სტრუქტურულ დირექტივაში, ბათონებზე ქლიქი და img src  ს 
+        ცლვილება
+    
+    </li>
+ 
+  
+
+</div>
+
+<div  class="slider">
+    <button>prev</button>
+    <img src="https://fps.cdnpk.net/images/home/subhome-ai.webp?w=649&h=649">
+    <button>next</button>
 </div>
