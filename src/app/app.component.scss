@@ -1,0 +1,18 @@
+.main {
+    width: 900px;
+    margin: 100px auto;
+    padding: 12px;
+}
+
+.main button {
+    width: 120px;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    margin: 0 12px;
+}
+
+.main button:hover {
+    opacity: 0.8;
+}
