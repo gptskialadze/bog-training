@@ -1,4 +1,12 @@
 <div class="main">
-    <button (click)="generateSession()">ADD</button>
-    <button (click)="getData()">CALL</button>
+    <pre style="font-size: 20px;">
+        გვაქვს ორი ბათონი CALL  და ADD
+          1. ADD ზე დაჭერის შემდეგ უნდა დაგენერირდეს სესიის ID რომლის მაგალითი ნაჩვენებია კონსტრუქტორში
+          2. CALL ზე დაჭერის შემდეგ უნდა გამოიძახოთ  HttpService ის getPosts
+          3. შექმენით ინტერსეპტორი რომელიც შეამოწმებს თუ localeStorage ში არსებობს sessionId 
+           მაშინ მაგას გაატანს sessionId იში ჰედერებში, თუ არ არსებობს მაშინ ცარიელ sessionId 
+           ს გაატანს
+    </pre>
+    <button>ADD</button>
+    <button>CALL</button>
 </div>
