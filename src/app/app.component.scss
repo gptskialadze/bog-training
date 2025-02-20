@@ -34,3 +34,19 @@
     color: rgba(46, 47, 48, 0.693);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
+
+.actions button {
+   background-color: rgb(41, 65, 170);
+   border: none;
+   color:white;
+   padding: 13px;
+   width: 120px;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+}
+
+.actions button:hover {
+    opacity: 0.6;
+    transform: scale(1.02);
+}

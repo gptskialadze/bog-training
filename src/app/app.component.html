@@ -1,20 +1,23 @@
 <div class="main">
   <div class="header">
     <div class="profile">
-      <img src="../assets/profile.avif" alt="">
+      <img [src]="img" alt="">
     </div>
     <div class="client-info">
-      <div class="client-name"><span>Name: </span>Giorgi Ptskialadze</div>
-      <div class="client-age"><span>Age: </span> 33</div>
-      <div class="client-pin"><span>Pin: </span> 23234232423</div>
+      <div class="client-name"><span>Name: </span>{{client.clientName}}</div>
+      <div class="client-age"><span>Age: </span> {{client.clientAge}}</div>
+      <div class="client-pin"><span>Pin: </span> {{client.clientPin}}</div>
+    </div>
+    <div class="actions" (click)="changeData()">
+      <button>Change</button>
     </div>
   </div>
   <div class="accounts">
     <label>ანგ: </label>
-    <span>GE23BG000101001001</span>
+    <span>{{ client.getAcctoNo() }}</span>
   </div>
   <div class="cards">
     <label for="">ბარათი: </label>
-    <span>2312323232323</span>
+    <span>{{ cardNo }}</span>
   </div>
 </div>
