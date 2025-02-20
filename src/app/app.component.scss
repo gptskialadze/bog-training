@@ -1,0 +1,36 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header, .accounts, .cards {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    background-color: rgba(226, 227, 226, 0.484);
+    padding: 23px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 4px 4px rgb(220 220 220);
+    margin-bottom: 18px;
+}
+
+.profile {
+    width: 200px;
+}
+.profile img {
+    width: 100%;
+    border-radius: 23px;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0px 23px;
+    font-size: 23px;
+    color: rgba(46, 47, 48, 0.693);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
