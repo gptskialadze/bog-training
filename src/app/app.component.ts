@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
+
+  changePhoto(event: Event) {
+    console.log((event.target as HTMLInputElement).checked)
+  }
 }
