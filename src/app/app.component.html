@@ -4,10 +4,9 @@
       <img src="assets/logo.jpg" alt="image not found">
     </div>
     <div class="menu">
-        <a href="#">Main</a>
-        <a href="#">Music <i class="fa fa-music menu-icon"></i></a>
-        <a href="#">Videos <i class="fa fa-video-camera menu-icon"></i></a>
-        <a href="#">News</a>
+        <a href="#" *ngFor="let item of menues">
+          {{item.name}} <i *ngIf="item.logo.length > 0" [ngClass]="item.logo"></i>
+        </a>
     </div>
     <div class="login">
       <div class="sign-in">
@@ -18,186 +17,44 @@
     </div>
       <i class="fa fa-shopping-cart" (click)="showCart()"></i>
       <div class="cart-items" *ngIf="isShow">
-        <div class="cart-item">
-          <div class="cart-item-img">
-            <img src="assets/laptop.jpeg" alt="image not found">
+        <ng-container *ngIf="items.length">
+          <div class="cart-item" *ngFor="let item of items">
+            <div class="cart-item-img">
+              <img [src]="item.img" alt="image not found">
+            </div>
+            <div class="cart-item-action">
+              <i class="fa fa-remove" (click)="removeItem(item.id)"></i>
+            </div>
           </div>
-          <div class="cart-item-action">
-            <i class="fa fa-remove"></i>
-          </div>
-        </div>
-        <div class="cart-item">
-          <div class="cart-item-img">
-            <img src="assets/laptop.jpeg" alt="image not found">
-          </div>
-          <div class="cart-item-action">
-            <i class="fa fa-remove"></i>
-          </div>
-        </div>
+        </ng-container>
+    
       </div>
   </div>
   <div class="body">
     <div class="cards">
-      <div class="card">
-        <img class="sale-logo" src="assets/sale.png">
+      <div class="card" *ngFor="let card of cards">
+        <img *ngIf="card.hasSale" class="sale-logo" src="assets/sale.png">
         <div class="card-img">
-          <img src="assets/laptop.jpeg" alt="inage not found">
+          <img [src]="card.img" alt="inage not found">
         </div>
         <div class="card-body">
           <p>
-            Lorem ipsum dolor sit amet consectetur
+            {{card.desc}}
           </p>
-          <p class="price">Price: <span class="prev-price">12 USD</span> <span class="new-price">3 USD</span> </p>
+          <p class="price">Price: 
+            <span [ngClass]="{'prev-price': card.hasSale}">
+            {{card.price}} {{card.ccy}} </span> 
+            <span *ngIf="card.hasSale" class="new-price">
+            {{card.salePirce}} {{card.ccy}}
+          </span> </p>
         </div>
         <div class="card-footer">
-          <button class="btn buy">Buy</button>
+          <button class="btn buy" (click)="addCart(card)">Buy</button>
           <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img src="assets/mphone1.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img src="assets/laptop1.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img src="assets/watch1.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <img class="sale-logo" src="assets/sale.png">
-        <div class="card-img">
-          <img src="assets/mphone2.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="prev-price">12 USD</span> <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img src="assets/watch2.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <img class="sale-logo" src="assets/sale.png">
-        <div class="card-img">
-          <img src="assets/mphone3.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="prev-price">12 USD</span> <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img src="assets/laptop2.jpeg" alt="inage not found">
-        </div>
-        <div class="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p class="price">Price: <span class="new-price">3 USD</span> </p>
-        </div>
-        <div class="card-footer">
-          <button class="btn buy">Buy</button>
-          <div class="star">
-            <i class="fa fa-star fill" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
-            <i class="fa fa-star" style="font-size:20px"></i>
+            <i [ngClass]="{'fa fa-star': true, 'fill': card.star > 0}" style="font-size:20px"></i>
+            <i [ngClass]="{'fa fa-star': true, 'fill': card.star > 1}" style="font-size:20px"></i>
+            <i [ngClass]="{'fa fa-star': true, 'fill': card.star > 2}" style="font-size:20px"></i>
+            <i [ngClass]="{'fa fa-star': true, 'fill': card.star > 3}" style="font-size:20px"></i>
           </div>
         </div>
       </div>

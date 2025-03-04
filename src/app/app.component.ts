@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { menues } from './menues';
+import { cards } from './cards';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isShow: boolean = false
+  menues = menues;
+  cards = cards;
+  items: any = [];
+  isShow: boolean = false;
+
   showCart() {
     this.isShow = !this.isShow
+  }
+
+  addCart(card: any) {
+    this.items.push(card)
+  }
+
+  removeItem(id: number) {
+    this.items.splice(this.items.findIndex((e: any) => e.id == id), 1)
   }
 }
