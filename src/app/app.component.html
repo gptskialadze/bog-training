@@ -8,11 +8,12 @@
         <a>About</a>
       </li>
       <li>
-        <a>Forms</a>
+        <a routerLink="form/4">Forms</a>
       </li>
     </ul>
   </div>
 </div>
 <div class="main">
-  <a href="#">Users</a>
+  <a (click)="navigateToForm()">Users</a>
 </div>
+<router-outlet></router-outlet>
