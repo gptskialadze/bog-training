@@ -11,6 +11,11 @@ export class AppComponent {
 
   }
   navigateToForm() {
-    this.router.navigate(['form', '1'])
+    this.router.navigate(['form'], {
+      queryParams: {
+        id: 1,
+        status: 'AAA'
+      }
+    })
   }
 }
