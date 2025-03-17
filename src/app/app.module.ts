@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {
@@ -33,11 +34,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DetailsComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -35,3 +35,15 @@ header ul a:hover {
     background-color: green !important;
   
 }
+
+.table-row-color {
+    background-color: grey !important;
+    color: white !important
+}
+
+.table-hover {
+    --bs-table-bg: none
+}
+.table>:not(caption)>*>* {
+    color:unset;
+}
