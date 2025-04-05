@@ -1,0 +1,15 @@
+[{
+    "id": 1,
+    "name": "Tbilisi",
+    "isDefault": "N"
+},
+{
+    "id": 2,
+    "name": "Batumi",
+    "isDefault": "Y"
+},
+{
+    "id": 3,
+    "name": "Qutaisi",
+    "isDefault": "N"
+}]
