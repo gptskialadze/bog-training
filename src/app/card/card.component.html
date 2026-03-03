@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-image">
+    <img [src]="user.image" alt="user.name">
+  </div>
+  <div class = "card-content">
+    <h2>{{user.name}}</h2>
+    <p>
+      <a href="#">{{user.website}}</a>
+    </p>
+    <div class="card-content-buttons">
+      <button class="btn btn-message">Message</button>
+      <button class="btn btn-call">Call Now</button>
+    </div>
+    <div class="card-category-names">
+      <div class = "card-category-names-titles">
+        <p>Category :</p>
+        <p>Work Hrs :</p>
+        <p>Country :</p>
+        <p>Email Id :</p>
+      </div>
+      <div class = "card-category-names-values">
+        <p>{{user.category}}</p>
+        <p>{{user.workHrs}}</p>
+        <p>{{user.country}}</p>
+        <p>{{user.email}}</p>
+      </div>
+    </div>
+  </div>
+</div>
