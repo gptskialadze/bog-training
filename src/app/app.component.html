@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card_header">
+    <div class="switcher">
+      <label class="switch">
+        <input type="checkbox" [checked]="isMale" (click)="changePhoto($event)">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="card_body">
+    <div class="card_body_title">
+      <h3 [title]="isMale ? 'ბატონი' : 'ქალბატონი'">
+        {{ isMale ? 'ალექსანდრე' : 'თამთა' }}
+      </h3>
+    </div>
+    
+    <div class="card_body_image">
+      <img [src]="isMale ? maleImg : femaleImg" alt="Profile image">
+    </div>
+  </div>
+</div>
