@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
+<<<<<<< HEAD
+  isMale:boolean=true;
+  personName:string="Aleksander";
+  maleImg: string = "assets/person.jpg";
+  femaleImg: string = "assets/woman-Pic.avif";
+  toggleGender() {
+    this.isMale = !this.isMale;
+  }
+changePhoto(event: any) {
+    this.isMale = !this.isMale;
+    console.log("Toggle status:", event.target.checked);
+  }
 }
+=======
+}
+>>>>>>> upstream/master
