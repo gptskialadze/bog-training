@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
-<<<<<<< HEAD
   isMale:boolean=true;
   personName:string="Aleksander";
   maleImg: string = "assets/person.jpg";
@@ -20,6 +19,3 @@ changePhoto(event: any) {
     console.log("Toggle status:", event.target.checked);
   }
 }
-=======
-}
->>>>>>> upstream/master
