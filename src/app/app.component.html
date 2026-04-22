@@ -12,14 +12,14 @@
   </h2>
 </pre>
 
-<div class="form">
+<div class="form" [formGroup]="myForm">
   <div class="inputs">
     <label>Iput 1</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" formControlName="input1">
     
     
     <label>Iput 2</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" formControlName="input2">
     
         
     <label>Iput 3</label>

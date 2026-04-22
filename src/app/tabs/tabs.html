@@ -1,0 +1,13 @@
+<ul class="nav nav-tabs">
+    <ng-container style="background-color: red;">
+  <li class="nav-item" *ngFor="let tab of tabComponent; let i = index">
+    <a class="nav-link" 
+     [class.active]="i == activeTabIndex"
+     href="#"
+     (click)="setTabIndex(i)">
+        {{tab.title}}
+    </a>
+    </li>
+    </ng-container>
+</ul>
+<ng-content></ng-content>
