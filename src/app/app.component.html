@@ -1,53 +1,28 @@
-<pre>
-  <h2>
-    1. გვაქვს ორი ინფუთი (Iput 1, Iput 2), სანამ ორივეში რამეს არ ჩავწერ მანამდე არ გააქტიურდეს Iput 3
-    2. Iput 2 ან Iput 3 ში ჩაწერილი მნიძვნელობა უდრის 5 ს მაშინ Iput 1 შიც ჩაიწეროს 5
-    3. თუ მეორე ინფუთში ჩავწერ სტრინგს დადიზეიბლდეს Iput 3
-    4. სანამ სამივე ჩეკბოქს არ მოვნიშნავ მანამდე არ გააქტიურდეს Submuit ღილაკი
+<!-- MergeMap -->
+ <!--  Api Example With of() and https://jsonplaceholder.typicode.com/posts/"-->
+ <!-- with of() and interval(1000) -->
 
-    5. გვაქვს dropdow და ვირჩევთ ქალაქებს, ბათონ Submuit ზე დაჭერის შემდეგ input 3 ში უნდა ჩაიწეროს არჩეული ქალაქი
+<!-- SwitchMap -->
+ <!--  Api Example With of() and https://jsonplaceholder.typicode.com/posts/" -->
+ <!-- with of() and interval(1000) -->
 
-    6. თუ არჩეული ქალაქი არის Tbilisi, მაშინ Checkbox 1 ამოინიშნოს თუ მონიშნულია და მოინიშნოს თუ ამონიშნულია
+<!-- ConcatMap -->
+  <!-- with of() and interval(1000) -->
+  <!-- with presentation  example -->
 
-  </h2>
-</pre>
+  <!-- First() and Last() -->
 
-<div class="form" [formGroup]="myForm">
-  <div class="inputs">
-    <label>Iput 1</label>
-    <input type="text" class="form-control" formControlName="input1">
-    
-    
-    <label>Iput 2</label>
-    <input type="text" class="form-control" formControlName="input2">
-    
-        
-    <label>Iput 3</label>
-    <input type="text" class="form-control" disabled>
-    
-            
-    <label>Dropdown</label>
-    <select class="form-control select">
-      <option value="TB">Tbilisi</option>
-      <option value="QT">Qutaisi</option>
-      <option value="BT">Batumi</option>
-    </select>
+  <ul>
+    <li> დავაოპტიმიზიროთ და subscribe ში არ დაბწეროთ subscribe;</li>
+    <li>საერთოდ არ გამოვიყენოთ subscribe;</li>
+    <li>length უნდა ვაჩვენოით ყოველთვის</li>
+  </ul>
+ 
+
+  <div class="users">
+    <button class="btn btn-primary" (click)="this.appService.subject.next(true)">Users</button>
+    <h2>{{users.length}} / UserId: {{users[0]?.userId}}</h2>
+    <ul>
+      <li *ngFor="let data of users">{{data.title}}</li>
+    </ul>
   </div>
-  
-  <div class="radios">
-    <div class="radio">
-      <label>Checkbox 1</label>
-      <input type="checkbox" class="radio-control" name="radio-control">
-    </div>
-    <div class="radio">
-    <label>Checkbox 2</label>
-    <input type="checkbox" class="radio-control" name="radio-control">
-    </div>
-       <div class="radio">
-    <label>Checkbox3</label>
-    <input type="checkbox" class="radio-control" name="radio-control">
-    </div>
-  
-  </div>
-    <button class="submit">SUBMIT</button>
-</div>
