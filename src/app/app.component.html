@@ -11,23 +11,19 @@
 
   </h2>
 </pre>
-
-<div class="form">
+<div class="form" [formGroup]="form">
   <div class="inputs">
     <label>Iput 1</label>
-    <input type="text" class="form-control">
-    
+    <input type="text" class="form-control" formControlName="input1">
     
     <label>Iput 2</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" formControlName="input2">
     
-        
     <label>Iput 3</label>
-    <input type="text" class="form-control" disabled>
+    <input type="text" class="form-control" formControlName="input3">
     
-            
     <label>Dropdown</label>
-    <select class="form-control select">
+    <select class="form-control select" formControlName="city">
       <option value="TB">Tbilisi</option>
       <option value="QT">Qutaisi</option>
       <option value="BT">Batumi</option>
@@ -37,17 +33,22 @@
   <div class="radios">
     <div class="radio">
       <label>Checkbox 1</label>
-      <input type="checkbox" class="radio-control" name="radio-control">
+      <input type="checkbox" class="radio-control" formControlName="cb1">
     </div>
     <div class="radio">
-    <label>Checkbox 2</label>
-    <input type="checkbox" class="radio-control" name="radio-control">
+      <label>Checkbox 2</label>
+      <input type="checkbox" class="radio-control" formControlName="cb2">
     </div>
-       <div class="radio">
-    <label>Checkbox3</label>
-    <input type="checkbox" class="radio-control" name="radio-control">
+    <div class="radio">
+      <label>Checkbox 3</label>
+      <input type="checkbox" class="radio-control" formControlName="cb3">
     </div>
-  
   </div>
-    <button class="submit">SUBMIT</button>
+
+  <button 
+    class="submit" 
+    (click)="onSubmit()" 
+    [disabled]="isInvalid$ | async">
+    SUBMIT
+  </button>
 </div>
