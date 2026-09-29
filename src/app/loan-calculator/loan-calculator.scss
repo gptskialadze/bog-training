@@ -1,0 +1,127 @@
+
+
+    .loan-calculator {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .left h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
+
+    .left p {
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .calculate-btn {
+      width: 100%;
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .calculate-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .right {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .right h3 {
+      color: #1f2937;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .result-box {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .result-label {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .result-value {
+      color: #111827;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .formula {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 20px;
+    }
+
+    .formula-title {
+      color: #1e40af;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .formula-text {
+      color: #374151;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .loan-calculator {
+        grid-template-columns: 1fr;
+        padding: 25px;
+        gap: 25px;
+      }
+    }

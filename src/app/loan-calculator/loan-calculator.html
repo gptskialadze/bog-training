@@ -1,0 +1,81 @@
+
+
+  <div class="loan-calculator">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <h2>Loan Calculator</h2>
+      <p>Enter your loan details to calculate your monthly payment.</p>
+
+      <div class="form-group">
+        <label for="loanAmount">Loan Amount</label>
+        <input
+          type="number"
+          id="loanAmount"
+          placeholder="Enter loan amount"
+          value="10000"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="loanPeriod">Loan Period</label>
+        <input
+          type="date"
+          id="loanPeriod"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="interestRate">Annual Interest Rate (%)</label>
+        <input
+          type="number"
+          id="interestRate"
+          placeholder="Enter interest rate"
+          value="8"
+          step="0.1"
+        />
+      </div>
+
+      <button class="calculate-btn" onclick="calculateLoan()">
+        Calculate
+      </button>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <h3>Loan Plan</h3>
+
+      <div class="result-box">
+        <div class="result-label">Loan Amount</div>
+        <div class="result-value" id="resultAmount">$10,000</div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-label">Loan Period</div>
+        <div class="result-value" id="resultPeriod">12 Months</div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-label">Monthly Payment</div>
+        <div class="result-value" id="monthlyPayment">$869.88</div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-label">Total Payment</div>
+        <div class="result-value" id="totalPayment">$10,438.56</div>
+      </div>
+
+      <div class="formula">
+        <div class="formula-title">Loan Formula</div>
+        <div class="formula-text">
+          Monthly Payment = P × r × (1 + r)ⁿ ÷
+          ((1 + r)ⁿ − 1)
+          <br><br>
+          P = Loan Amount<br>
+          r = Monthly Interest Rate<br>
+          n = Number of Months
+        </div>
+      </div>
+    </div>
+
+  </div>
